@@ -1,0 +1,9 @@
+---
+- name: install httpd and mysql
+  hosts: localhost
+  gather_facts: true
+  remote_user: root
+
+  roles: 
+      - httpd
+      - mysql-server

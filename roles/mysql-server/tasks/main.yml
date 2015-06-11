@@ -1,0 +1,16 @@
+---
+# tasks file for mysql-server
+- name: install mysql-server
+  apt: name=mysql-server state=present
+  when: ansible_os_family == "Debian"
+  notify: 
+    - start mysql
+- name: install mysql-server
+  yum: name=mysql-server state=present
+  when: ansible_os_family == "RedHat"
+  notify: 
+    - start mysql
+- name: configure mysqld port
+  template: src=my.cnf.j2 dest=/etc/mysql/my.cnf
+  notify:
+    - restart mysql

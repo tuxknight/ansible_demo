@@ -1,0 +1,13 @@
+---
+# handlers file for httpd
+- name: start httpd
+  service: name={{apache}} state=started
+  
+- name: stop httpd
+  service: name={{apache}} state=stopped
+  
+- name: restart httpd
+  service: name={{apache}} state=restart
+  
+- name: reload httpd
+  service: name={{apache}} state=reload
