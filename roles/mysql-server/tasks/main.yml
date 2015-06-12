@@ -1,11 +1,11 @@
 ---
 # tasks file for mysql-server
-- name: install mysql-server
+- name: install mysql-server on Debian-based
   apt: name=mysql-server state=present
   when: ansible_os_family == "Debian"
   notify: 
     - start mysql
-- name: install mysql-server
+- name: install mysql-server on RedHat-based
   yum: name=mysql-server state=present
   when: ansible_os_family == "RedHat"
   notify: 

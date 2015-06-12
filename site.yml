@@ -1,4 +1,11 @@
 ---
+- name: init environment
+  hosts: all
+  gather_facts: true
+  remote_user: root
+  roles:
+      - common
+
 - name: install httpd and mysql
   hosts: localhost
   gather_facts: true
@@ -7,3 +14,4 @@
   roles: 
       - httpd
       - mysql-server
+

@@ -1,2 +1,5 @@
 [localhost]
 127.0.0.1 remote_user=root
+
+[web01]
+127.0.0.1

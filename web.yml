@@ -1,0 +1,9 @@
+---
+- name: install httpd for web servers
+  hosts:
+    - web01
+    - web02
+  remote_user: root
+
+  roles:
+    - httpd

@@ -1,11 +1,11 @@
 ---
-- name: install httpd
+- name: install httpd on Debian-based
   apt: pkg=apache2 state=present
   when: ansible_os_family == "Debian"
   notify:
     - start httpd
  
-- name: install httpd
+- name: install httpd on RedHat-based
   yum:
     pkg=httpd
     state=present
