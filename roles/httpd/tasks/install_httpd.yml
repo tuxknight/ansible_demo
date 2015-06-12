@@ -12,3 +12,6 @@
   when: ansible_os_family == "RedHat"
   notify: 
     - start httpd
+
+- name: ensure httpd is running
+  service: name={{apache}} enabled=yes state=started
